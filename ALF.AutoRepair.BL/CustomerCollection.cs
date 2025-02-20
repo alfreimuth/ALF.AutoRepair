@@ -7,10 +7,7 @@ namespace ALF.AutoRepair.BL
         {
             Customer c;
 
-            c = new Customer();
-            c.FirstName = "John";
-            c.LastName = "Doe";
-            c.PhoneNumber = "555-1212";
+            c = new Customer("John", "Doe", "555-1212");
             Add(c);
 
             c = new Customer();

@@ -36,6 +36,14 @@
             label3 = new Label();
             lstCustomers = new ListBox();
             btnAddCustomer = new Button();
+            txtMake = new TextBox();
+            txtModel = new TextBox();
+            txtYear = new TextBox();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            btnAddVehicle = new Button();
+            lstVehicles = new ListBox();
             SuspendLayout();
             // 
             // txtFirstName
@@ -106,17 +114,93 @@
             btnAddCustomer.UseVisualStyleBackColor = true;
             btnAddCustomer.Click += btnAddCustomer_Click;
             // 
+            // txtMake
+            // 
+            txtMake.Location = new Point(652, 46);
+            txtMake.Name = "txtMake";
+            txtMake.Size = new Size(100, 23);
+            txtMake.TabIndex = 0;
+            // 
+            // txtModel
+            // 
+            txtModel.Location = new Point(652, 104);
+            txtModel.Name = "txtModel";
+            txtModel.Size = new Size(100, 23);
+            txtModel.TabIndex = 1;
+            // 
+            // txtYear
+            // 
+            txtYear.Location = new Point(652, 162);
+            txtYear.Name = "txtYear";
+            txtYear.Size = new Size(100, 23);
+            txtYear.TabIndex = 2;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(559, 49);
+            label4.Name = "label4";
+            label4.Size = new Size(36, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Make";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(560, 107);
+            label5.Name = "label5";
+            label5.Size = new Size(41, 15);
+            label5.TabIndex = 3;
+            label5.Text = "Model";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(560, 165);
+            label6.Name = "label6";
+            label6.Size = new Size(29, 15);
+            label6.TabIndex = 3;
+            label6.Text = "Year";
+            // 
+            // btnAddVehicle
+            // 
+            btnAddVehicle.Location = new Point(604, 221);
+            btnAddVehicle.Name = "btnAddVehicle";
+            btnAddVehicle.Size = new Size(82, 23);
+            btnAddVehicle.TabIndex = 6;
+            btnAddVehicle.Text = "Add Vehicle";
+            btnAddVehicle.UseVisualStyleBackColor = true;
+            btnAddVehicle.Click += btnAddVehicle_Click;
+            // 
+            // lstVehicles
+            // 
+            lstVehicles.FormattingEnabled = true;
+            lstVehicles.ItemHeight = 15;
+            lstVehicles.Location = new Point(793, 46);
+            lstVehicles.Name = "lstVehicles";
+            lstVehicles.Size = new Size(170, 319);
+            lstVehicles.TabIndex = 7;
+            lstVehicles.SelectedIndexChanged += lstVehicles_SelectedIndexChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(535, 404);
+            ClientSize = new Size(1048, 404);
+            Controls.Add(lstVehicles);
+            Controls.Add(btnAddVehicle);
             Controls.Add(btnAddCustomer);
             Controls.Add(lstCustomers);
+            Controls.Add(label6);
+            Controls.Add(label5);
             Controls.Add(label3);
+            Controls.Add(label4);
             Controls.Add(label2);
+            Controls.Add(txtYear);
             Controls.Add(label1);
+            Controls.Add(txtModel);
             Controls.Add(txtPhoneNumber);
+            Controls.Add(txtMake);
             Controls.Add(txtLastName);
             Controls.Add(txtFirstName);
             Name = "Form1";
@@ -135,5 +219,13 @@
         private Label label3;
         private ListBox lstCustomers;
         private Button btnAddCustomer;
+        private TextBox txtMake;
+        private TextBox txtModel;
+        private TextBox txtYear;
+        private Label label4;
+        private Label label5;
+        private Label label6;
+        private Button btnAddVehicle;
+        private ListBox lstVehicles;
     }
 }
