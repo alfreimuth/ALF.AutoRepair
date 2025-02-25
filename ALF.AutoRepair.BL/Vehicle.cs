@@ -1,6 +1,6 @@
 ﻿namespace ALF.AutoRepair.BL
 {
-    public class Vehicle
+    public class Vehicle : IStartable
     {
 
         // fields
@@ -10,6 +10,8 @@
         public string Make { get; set; } = "";
 
         public string Model { get; set; } = "";
+        public bool IsRunning { get; set; }
+
 
         public int Year
         {
@@ -19,14 +21,32 @@
                 if (value < 1900) throw new InvalidYearException(value);
                 year = value;
             }
-        } 
-        
+        }
 
+        // constructors
+        public Vehicle() { }
+
+        public Vehicle(string make, string model, int year)
+        {
+            Make = make;
+            Model = model;
+            Year = year;
+        }
 
         // methods
         public virtual string GetDisplay()
         {
-            return Year.ToString() + " " + Make + " " + Model;
+            return Year + " " + Make + " " + Model;
+        }
+
+        public override string ToString()
+        {
+            return GetDisplay();
+        }
+
+        public void Start()
+        {
+            IsRunning = true;
         }
     }
 }

@@ -1,12 +1,15 @@
 ﻿
 namespace ALF.AutoRepair.BL
 {
-    public class Customer
+    public class Customer : IComparable<Customer>
     {
         // properties
         public string FirstName { get; set; } = "";
         public string LastName { get; set; } = "";
         public string PhoneNumber { get; set; } = "";
+
+        public string FullName{ get { return ToString(); } }
+
         public List<Vehicle> Vehicles { get; set; }
 
         // constructors
@@ -32,6 +35,12 @@ namespace ALF.AutoRepair.BL
         public virtual string GetFullName()
         {
             return ToString();
+        }
+
+        public int CompareTo(Customer? other)
+        {
+            if (other == null) return -1;
+            return FirstName.CompareTo(other.FirstName);
         }
     }
 }

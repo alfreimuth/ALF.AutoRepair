@@ -30,6 +30,8 @@ namespace ALF.AutoRepair.UI
 
         private void RebindCustomers()
         {
+            customers.Sort();
+
             lstCustomers.DataSource = null;
             lstCustomers.DataSource = customers;
         }
@@ -48,6 +50,8 @@ namespace ALF.AutoRepair.UI
                 txtFirstName.Text = selectedCustomer.FirstName;
                 txtLastName.Text = selectedCustomer.LastName;
                 txtPhoneNumber.Text = selectedCustomer.PhoneNumber;
+
+                RebindVehicles(selectedCustomer);
             }
         }
 
@@ -68,7 +72,6 @@ namespace ALF.AutoRepair.UI
                 }
                 catch (InvalidYearException iyex)
                 {
-                    //MessageBox.Show("The year is invalid (" + iyex.InvalidYear + ").");
                     MessageBox.Show(iyex.Message);
                     txtYear.Focus();
                     txtYear.SelectAll();
