@@ -44,6 +44,12 @@
             label6 = new Label();
             btnAddVehicle = new Button();
             lstVehicles = new ListBox();
+            btnEditVehicle = new Button();
+            btnDeleteVehicle = new Button();
+            btnEditCustomer = new Button();
+            btnDeleteCustomer = new Button();
+            dgvCustomers = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dgvCustomers).BeginInit();
             SuspendLayout();
             // 
             // txtFirstName
@@ -108,7 +114,7 @@
             // 
             btnAddCustomer.Location = new Point(101, 221);
             btnAddCustomer.Name = "btnAddCustomer";
-            btnAddCustomer.Size = new Size(111, 23);
+            btnAddCustomer.Size = new Size(111, 33);
             btnAddCustomer.TabIndex = 5;
             btnAddCustomer.Text = "Add Customer";
             btnAddCustomer.UseVisualStyleBackColor = true;
@@ -166,7 +172,7 @@
             // 
             btnAddVehicle.Location = new Point(604, 221);
             btnAddVehicle.Name = "btnAddVehicle";
-            btnAddVehicle.Size = new Size(82, 23);
+            btnAddVehicle.Size = new Size(95, 33);
             btnAddVehicle.TabIndex = 6;
             btnAddVehicle.Text = "Add Vehicle";
             btnAddVehicle.UseVisualStyleBackColor = true;
@@ -182,11 +188,64 @@
             lstVehicles.TabIndex = 7;
             lstVehicles.SelectedIndexChanged += lstVehicles_SelectedIndexChanged;
             // 
+            // btnEditVehicle
+            // 
+            btnEditVehicle.Location = new Point(604, 264);
+            btnEditVehicle.Name = "btnEditVehicle";
+            btnEditVehicle.Size = new Size(95, 33);
+            btnEditVehicle.TabIndex = 8;
+            btnEditVehicle.Text = "Edit Vehicle";
+            btnEditVehicle.UseVisualStyleBackColor = true;
+            btnEditVehicle.Click += btnEditVehicle_Click;
+            // 
+            // btnDeleteVehicle
+            // 
+            btnDeleteVehicle.Location = new Point(604, 307);
+            btnDeleteVehicle.Name = "btnDeleteVehicle";
+            btnDeleteVehicle.Size = new Size(95, 33);
+            btnDeleteVehicle.TabIndex = 9;
+            btnDeleteVehicle.Text = "Delete Vehicle";
+            btnDeleteVehicle.UseVisualStyleBackColor = true;
+            btnDeleteVehicle.Click += btnDeleteVehicle_Click;
+            // 
+            // btnEditCustomer
+            // 
+            btnEditCustomer.Location = new Point(101, 264);
+            btnEditCustomer.Name = "btnEditCustomer";
+            btnEditCustomer.Size = new Size(111, 33);
+            btnEditCustomer.TabIndex = 10;
+            btnEditCustomer.Text = "Edit Customer";
+            btnEditCustomer.UseVisualStyleBackColor = true;
+            btnEditCustomer.Click += btnEditCustomer_Click;
+            // 
+            // btnDeleteCustomer
+            // 
+            btnDeleteCustomer.Location = new Point(101, 307);
+            btnDeleteCustomer.Name = "btnDeleteCustomer";
+            btnDeleteCustomer.Size = new Size(111, 33);
+            btnDeleteCustomer.TabIndex = 10;
+            btnDeleteCustomer.Text = "Delete Customer";
+            btnDeleteCustomer.UseVisualStyleBackColor = true;
+            btnDeleteCustomer.Click += btnDeleteCustomer_Click;
+            // 
+            // dgvCustomers
+            // 
+            dgvCustomers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCustomers.Location = new Point(12, 368);
+            dgvCustomers.Name = "dgvCustomers";
+            dgvCustomers.Size = new Size(450, 150);
+            dgvCustomers.TabIndex = 11;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1048, 404);
+            ClientSize = new Size(1048, 533);
+            Controls.Add(dgvCustomers);
+            Controls.Add(btnDeleteCustomer);
+            Controls.Add(btnEditCustomer);
+            Controls.Add(btnDeleteVehicle);
+            Controls.Add(btnEditVehicle);
             Controls.Add(lstVehicles);
             Controls.Add(btnAddVehicle);
             Controls.Add(btnAddCustomer);
@@ -205,6 +264,8 @@
             Controls.Add(txtFirstName);
             Name = "Form1";
             Text = "Form1";
+            FormClosing += Form1_FormClosing;
+            ((System.ComponentModel.ISupportInitialize)dgvCustomers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -227,5 +288,10 @@
         private Label label6;
         private Button btnAddVehicle;
         private ListBox lstVehicles;
+        private Button btnEditVehicle;
+        private Button btnDeleteVehicle;
+        private Button btnEditCustomer;
+        private Button btnDeleteCustomer;
+        private DataGridView dgvCustomers;
     }
 }

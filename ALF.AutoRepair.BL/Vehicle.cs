@@ -18,7 +18,7 @@
             get { return year; }
             set
             {
-                if (value < 1900) throw new InvalidYearException(value);
+                if (value < 1908) throw new InvalidYearException(value);
                 year = value;
             }
         }

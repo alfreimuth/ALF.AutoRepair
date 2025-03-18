@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALF.AutoRepair.BL", "ALF.Au
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALF.AutoRepair.BL.Test", "ALF.AutoRepair.BL.Test\ALF.AutoRepair.BL.Test.csproj", "{C47D38CC-D8E3-4719-84E1-50540A665362}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ALF.AutoRepair.PL", "ALF.AutoRepair.PL\ALF.AutoRepair.PL.csproj", "{EE68A454-092E-482A-A798-803922AEE166}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C47D38CC-D8E3-4719-84E1-50540A665362}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C47D38CC-D8E3-4719-84E1-50540A665362}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C47D38CC-D8E3-4719-84E1-50540A665362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE68A454-092E-482A-A798-803922AEE166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE68A454-092E-482A-A798-803922AEE166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE68A454-092E-482A-A798-803922AEE166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE68A454-092E-482A-A798-803922AEE166}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

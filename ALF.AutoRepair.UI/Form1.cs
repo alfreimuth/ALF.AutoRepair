@@ -12,7 +12,8 @@ namespace ALF.AutoRepair.UI
         {
             InitializeComponent();
 
-            customers.LoadTestData();
+            //customers.LoadTestData();
+            customers.LoadFromXml();
 
             RebindCustomers();
         }
@@ -34,6 +35,15 @@ namespace ALF.AutoRepair.UI
 
             lstCustomers.DataSource = null;
             lstCustomers.DataSource = customers;
+
+            dgvCustomers.DataSource = null;
+            dgvCustomers.DataSource = customers;
+
+            dgvCustomers.Columns["FullName"].Visible = false;
+            dgvCustomers.Columns["FirstName"].HeaderText = "First Name";
+            dgvCustomers.Columns["LastName"].HeaderText = "Last Name";
+            dgvCustomers.Columns["PhoneNumber"].HeaderText = "Phone Number";
+            //dgvCustomers.Columns["ID"].DefaultCellStyle.Format = "C";
         }
 
         private void RebindVehicles(Customer customer)
@@ -60,8 +70,8 @@ namespace ALF.AutoRepair.UI
             Customer? selectedCustomer = lstCustomers.SelectedItem as Customer;
             if (selectedCustomer != null)
             {
-                try 
-                { 
+                try
+                {
                     Vehicle vehicle = new Vehicle();
                     vehicle.Make = txtMake.Text;
                     vehicle.Model = txtModel.Text;
@@ -98,6 +108,63 @@ namespace ALF.AutoRepair.UI
                 txtModel.Text = selectedVehicle.Model;
                 txtYear.Text = selectedVehicle.Year.ToString();
             }
+        }
+
+        private void btnEditCustomer_Click(object sender, EventArgs e)
+        {
+            Customer? selectedCustomer = lstCustomers.SelectedItem as Customer;
+            if (selectedCustomer != null)
+            {
+                selectedCustomer.FirstName = txtFirstName.Text;
+                selectedCustomer.LastName = txtLastName.Text;
+                selectedCustomer.PhoneNumber = txtPhoneNumber.Text;
+
+                RebindCustomers();
+            }
+        }
+
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            Customer? selectedCustomer = lstCustomers.SelectedItem as Customer;
+            if (selectedCustomer != null)
+            {
+                customers.Remove(selectedCustomer);
+
+                RebindCustomers();
+            }
+        }
+
+        private void btnEditVehicle_Click(object sender, EventArgs e)
+        {
+            Vehicle? selectedVehicle = lstVehicles.SelectedItem as Vehicle;
+            if (selectedVehicle != null)
+            {
+                Customer selectedCustomer = (Customer)lstCustomers.SelectedItem!;
+
+                selectedVehicle.Make = txtMake.Text;
+                selectedVehicle.Model = txtModel.Text;
+                selectedVehicle.Year = int.Parse(txtYear.Text);
+
+                RebindVehicles(selectedCustomer);
+            }
+        }
+
+        private void btnDeleteVehicle_Click(object sender, EventArgs e)
+        {
+            Vehicle? selectedVehicle = lstVehicles.SelectedItem as Vehicle;
+            if (selectedVehicle != null)
+            {
+                Customer selectedCustomer = (Customer)lstCustomers.SelectedItem!;
+
+                selectedCustomer.Vehicles.Remove(selectedVehicle);
+
+                RebindVehicles(selectedCustomer);
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            customers.SaveToXml();
         }
     }
 }

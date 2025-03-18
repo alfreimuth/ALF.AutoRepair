@@ -4,6 +4,7 @@ namespace ALF.AutoRepair.BL
     public class Customer : IComparable<Customer>
     {
         // properties
+        public int ID { get; set; } = 0;
         public string FirstName { get; set; } = "";
         public string LastName { get; set; } = "";
         public string PhoneNumber { get; set; } = "";

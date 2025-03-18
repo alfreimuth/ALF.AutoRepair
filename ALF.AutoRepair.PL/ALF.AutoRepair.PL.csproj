@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ALF.AutoRepair.PL\ALF.AutoRepair.PL.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,8 +1,15 @@
 ﻿
+using ALF.AutoRepair.PL;
+
 namespace ALF.AutoRepair.BL
 {
     public class CustomerCollection : List<Customer>
     {
+        public CustomerCollection()
+        {
+            DataAccess.XmlFilePath = "customers.xml";
+        }
+
         public void LoadTestData()
         {
             Customer c;
@@ -31,6 +38,19 @@ namespace ALF.AutoRepair.BL
             c.LastName = "White";
             c.PhoneNumber = "123-4567";
             Add(c);
+        }
+
+        public void SaveToXml()
+        {
+            DataAccess.SaveToXML(this, typeof(CustomerCollection));
+        }
+
+        public void LoadFromXml()
+        {
+            object? obj = DataAccess.LoadFromXml(typeof(CustomerCollection));
+            if (obj == null) return;
+
+            AddRange((CustomerCollection)obj);
         }
     }
 }
